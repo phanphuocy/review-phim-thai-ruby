@@ -1,4 +1,4 @@
-<h1><%= @movie.translatedTitle %></h1>
+<h1><%= @movie.translated_title %></h1>
 
 <table>
   <tr>
@@ -13,4 +13,9 @@
 
 <nav>
   <%= link_to "Tất cả các phim", movies_path %>
+</nav>
+<br />
+<nav>
+  <%= link_to 'Sửa', edit_movie_path(@movie) %>
+  <%= link_to "Xóa", movie_path(@movie), method: :delete,  data: { confirm: 'Thao tác này không thể hoàn tác, bạn có chắc muốn xóa phim này?'} %>
 </nav>

@@ -1,10 +1,14 @@
 <h1><%= @movies.size %> phim</h1>
 
+<nav>
+  <%= link_to "Thêm", new_movie_path %>
+</nav>
+
   <% @movies.each do |movie| %>
       <article>
         <header>
           <h2>
-            <%= link_to(movie.translatedTitle, movie_path(movie)) %>
+            <%= link_to(movie.translated_title, movie_path(movie)) %>
             (<%= movie.year %>)
           </h2>
           <main>

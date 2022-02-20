@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2022_02_19_123737) do
 
   create_table "movies", force: :cascade do |t|
-    t.string "translatedTitle"
-    t.string "nativeTitle"
-    t.string "romanTitle"
+    t.string "translated_title"
+    t.string "native_title"
+    t.string "roman_title"
     t.string "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

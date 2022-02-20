@@ -10,23 +10,23 @@
 Movie.destroy_all
 
 Movie.create!([{
-                   translatedTitle: 'F4',
-                   nativeTitle: 'หัวใจรักสี่ดวงดาว',
-                   romanTitle: 'F4 Thailand: Boys Over Flowers',
+                   translated_title: 'F4',
+                   native_title: 'หัวใจรักสี่ดวงดาว',
+                   roman_title: 'F4 Thailand: Boys Over Flowers',
                    year: '2021',
                    aired_from: '2021-12-18',
                    aired_to: '2022-04-09'
                },
                {
-                   translatedTitle: 'Yêu chàng cấp cứu',
-                   nativeTitle: 'รักฉุดใจนายฉุกเฉิน',
-                   romanTitle: 'Ruk Chut Jai Nai Chukchern',
+                   translated_title: 'Yêu chàng cấp cứu',
+                   native_title: 'รักฉุดใจนายฉุกเฉิน',
+                   roman_title: 'Ruk Chut Jai Nai Chukchern',
                    year: '2019'
                },
                {
-                   translatedTitle: 'Thầy lang trúng mánh',
-                   nativeTitle: 'ทองเอก หมอยา ท่าโฉลง',
-                   romanTitle: 'Thong EK',
+                   translated_title: 'Thầy lang trúng mánh',
+                   native_title: 'ทองเอก หมอยา ท่าโฉลง',
+                   roman_title: 'Thong EK',
                    year: '2019'
                }])
 

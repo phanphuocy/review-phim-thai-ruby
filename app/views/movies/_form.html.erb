@@ -1,0 +1,22 @@
+<%= form_for(@movie) do |f| %>
+  <p>
+    <%= f.label :translated_title %><br />
+    <%= f.text_field :translated_title, autofocus: true %>
+  </p>
+  <p>
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+  </p>
+  <p>
+    <%= f.label :aired_from %><br />
+    <%= f.date_select :aired_from %>
+  </p>
+  <p>
+    <%= f.label :aired_to %><br />
+    <%= f.date_select :aired_to %>
+  </p>
+  <p>
+    <%= f.submit %>
+    <%= link_to "Hủy", movies_path %>
+  </p>
+<% end %>
