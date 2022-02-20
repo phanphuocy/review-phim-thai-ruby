@@ -7,6 +7,9 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
 gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 5.0'
 
+# Flexible authentication solution for Rails with Warden
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

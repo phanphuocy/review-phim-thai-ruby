@@ -4,6 +4,22 @@
     <%= f.text_field :translated_title, autofocus: true %>
   </p>
   <p>
+    <%= f.label :english_title %><br />
+    <%= f.text_field :english_title %>
+  </p>
+  <p>
+    <%= f.label :roman_title %><br />
+    <%= f.text_field :roman_title %>
+  </p>
+  <p>
+    <%= f.label :native_title %><br />
+    <%= f.text_field :native_title %>
+  </p>
+  <p>
+    <%= f.label :poster_file_name %><br />
+    <%= f.text_field :poster_file_name, size: 30, placeholder: "GIF, JPG, hoặc PNG" %>
+  </p>
+  <p>
     <%= f.label :year %><br />
     <%= f.text_field :year %>
   </p>

@@ -6,4 +6,12 @@ module MoviesHelper
       'Không rõ'
     end
   end
+
+  def poster_for(movie)
+    if movie.poster_file_name.blank?
+      image_tag 'placeholder-poster.jpg'
+    else
+      image_tag movie.poster_file_name
+    end
+  end
 end

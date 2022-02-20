@@ -4,16 +4,20 @@
   <%= link_to "Thêm", new_movie_path %>
 </nav>
 
+<div style="display:grid; grid-template-columns: repeat(3, auto); grid-column-gap: 20px;">
   <% @movies.each do |movie| %>
       <article>
         <header>
+          <%= poster_for(movie) %>
           <h2>
             <%= link_to(movie.translated_title, movie_path(movie)) %>
             (<%= movie.year %>)
           </h2>
           <main>
             <p><%= movie.aired_from %></p>
+            <p>Số tập: <%= movie.num_of_episodes %></p>
           </main>
         </header>
       </article>
   <% end %>
+</div>

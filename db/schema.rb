@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_19_123737) do
+ActiveRecord::Schema.define(version: 2022_02_20_075317) do
 
   create_table "movies", force: :cascade do |t|
     t.string "translated_title"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(version: 2022_02_19_123737) do
     t.date "aired_from"
     t.date "aired_to"
     t.string "aired_on"
+    t.string "english_title"
+    t.text "description"
+    t.string "poster_file_name", default: ""
+    t.integer "num_of_episodes", default: 0
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

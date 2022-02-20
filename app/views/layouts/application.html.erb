@@ -11,6 +11,9 @@
   </head>
 
   <body style="max-width: 1000px; margin: 50px auto; padding: 50px; border: 1px solid black;">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render 'layouts/user_navbar' %>
     <%= yield %>
   </body>
 </html>

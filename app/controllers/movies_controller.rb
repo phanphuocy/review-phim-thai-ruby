@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    @movies = Movie.order(aired_from: :desc)
   end
 
   def show
@@ -36,6 +36,6 @@ class MoviesController < ApplicationController
   private
   def movie_params
     params.require(:movie)
-        .permit(:translated_title, :year, :aired_from, :aired_to)
+        .permit(:translated_title, :english_title, :roman_title, :native_title, :poster_file_name, :year, :aired_from, :aired_to)
   end
 end

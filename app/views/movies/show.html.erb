@@ -1,5 +1,10 @@
-<h1><%= @movie.translated_title %></h1>
+<nav>
+  <%= link_to "Tất cả các phim", movies_path %>
+</nav>
+<br />
 
+<h1><%= @movie.translated_title %></h1>
+<%= poster_for(@movie) %>
 <table>
   <tr>
     <td>Chiếu từ:</td>
@@ -11,9 +16,7 @@
   </tr>
 </table>
 
-<nav>
-  <%= link_to "Tất cả các phim", movies_path %>
-</nav>
+
 <br />
 <nav>
   <%= link_to 'Sửa', edit_movie_path(@movie) %>
