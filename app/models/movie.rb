@@ -1,4 +1,11 @@
 class Movie < ApplicationRecord
+  validates :translated_title, :year, presence: true
+  validates :description, length: { minimum: 25 }
+  validates :num_of_episodes, numericality: { only_integer: true, greater_than: 0 }
+  validates :poster_file_name, allow_blank: true, format: {
+      with: /\w+.(gif|jpg|png)\z/i,
+      message: "Poster phải ở định dạng file ảnh"
+  }
 
   def airing?
     if aired_from && aired_to

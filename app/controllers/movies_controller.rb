@@ -13,8 +13,12 @@ class MoviesController < ApplicationController
 
   def update
     @movie = Movie.find(params[:id])
-    @movie.update(movie_params)
-    redirect_to movie_path(@movie)
+    if @movie.update(movie_params)
+      flash[:notice] = "Thông tin phim đã cập nhập thành công!"
+      redirect_to movie_path(@movie)
+    else
+      render :edit
+    end
   end
 
   def new
@@ -23,8 +27,13 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
-    @movie.save
-    redirect_to movie_path(@movie)
+    if @movie.save
+      flash[:notice] = "Đã tạo phim thành công!"
+      redirect_to movie_path(@movie)
+    else
+      render :new
+    end
+
   end
 
   def destroy
@@ -36,6 +45,6 @@ class MoviesController < ApplicationController
   private
   def movie_params
     params.require(:movie)
-        .permit(:translated_title, :english_title, :roman_title, :native_title, :poster_file_name, :year, :aired_from, :aired_to)
+        .permit(:translated_title, :english_title, :roman_title, :native_title, :poster_file_name, :year, :aired_from, :aired_to, :description, :num_of_episodes)
   end
 end

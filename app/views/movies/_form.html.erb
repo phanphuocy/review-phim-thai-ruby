@@ -1,3 +1,5 @@
+<%= render 'shared/errors' %>
+
 <%= form_for(@movie) do |f| %>
   <p>
     <%= f.label :translated_title %><br />
@@ -18,6 +20,14 @@
   <p>
     <%= f.label :poster_file_name %><br />
     <%= f.text_field :poster_file_name, size: 30, placeholder: "GIF, JPG, hoặc PNG" %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :num_of_episodes %><br />
+    <%= f.number_field :num_of_episodes %>
   </p>
   <p>
     <%= f.label :year %><br />
