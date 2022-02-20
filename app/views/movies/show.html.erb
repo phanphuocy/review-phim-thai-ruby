@@ -1,0 +1,16 @@
+<h1><%= @movie.translatedTitle %></h1>
+
+<table>
+  <tr>
+    <td>Chiếu từ:</td>
+    <td><%= format_date(@movie.aired_from) %></td>
+  </tr>
+  <tr>
+    <td>Chiếu đến:</td>
+    <td><%= format_date(@movie.aired_to) %></td>
+  </tr>
+</table>
+
+<nav>
+  <%= link_to "Tất cả các phim", movies_path %>
+</nav>
