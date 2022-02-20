@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  translatedTitle: MyString
+  nativeTitle: MyString
+  romanTitle: MyString
+  year: MyString
+
+two:
+  translatedTitle: MyString
+  nativeTitle: MyString
+  romanTitle: MyString
+  year: MyString
