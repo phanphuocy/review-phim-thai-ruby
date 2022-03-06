@@ -17,6 +17,15 @@
   </tr>
 </table>
 
+<h2>Casts and crew</h2>
+<ul>
+  <% @all_roles_in_movie.each do |role| %>
+    <li>
+      <%= role.of.first_name %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Xem thêm', movie_person_role_in_movies_path(@movie) %>
 
 <br />
 <nav>

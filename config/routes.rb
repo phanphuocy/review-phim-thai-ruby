@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  resources :movies do
+    resources :person_role_in_movies
+  end
+
+  resources :people
+
   devise_for :users
+
   root 'movies#index'
   get 'home/index'
 
-  resources :movies
   # get 'movies' => 'movies#index'
   # get 'movies/new' => 'movies#new'
   # get 'movies/:slug' => 'movies#show', as: 'movie'

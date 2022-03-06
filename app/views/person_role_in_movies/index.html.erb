@@ -1,0 +1,11 @@
+<header>
+    <h1>Casts and crew <%= @movie.translated_title %></h1>
+</header>
+
+<ol>
+    <% @all_roles.each do |r| %>
+        <li>
+            <%= r.of.first_name %> - <%= r.in_movie.translated_title %>
+        </li>
+    <% end%>
+</ol>

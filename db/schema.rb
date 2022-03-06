@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_20_075317) do
+ActiveRecord::Schema.define(version: 2022_03_06_023304) do
 
   create_table "movies", force: :cascade do |t|
     t.string "translated_title"
@@ -26,6 +26,29 @@ ActiveRecord::Schema.define(version: 2022_02_20_075317) do
     t.text "description"
     t.string "poster_file_name", default: ""
     t.integer "num_of_episodes", default: 0
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string "first_name"
+    t.string "family_name"
+    t.string "native_name"
+    t.string "also_known_as"
+    t.string "nationality", default: "THAI"
+    t.string "gender"
+    t.date "birthday"
+    t.text "short_bio"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "person_role_in_movies", force: :cascade do |t|
+    t.integer "in_movie_id"
+    t.integer "of_id"
+    t.string "role_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["in_movie_id"], name: "index_person_role_in_movies_on_in_movie_id"
+    t.index ["of_id"], name: "index_person_role_in_movies_on_of_id"
   end
 
   create_table "users", force: :cascade do |t|
