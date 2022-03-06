@@ -11,7 +11,7 @@ module MoviesHelper
     if movie.poster_file_name.blank?
       image_tag 'placeholder-poster.jpg'
     else
-      image_tag movie.poster_file_name
+      image_tag movie.poster_file_name, width: "100%"
     end
   end
 end

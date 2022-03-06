@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="max-width: 1000px; margin: 50px auto; padding: 50px; border: 1px solid black;">
+  <body class="bg-gray-200">
+  <div class="bg-white max-w-6xl mx-auto">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= render 'layouts/user_navbar' %>
+    <%= render 'layouts/header'%>
     <%= yield %>
+    <div>
   </body>
 </html>

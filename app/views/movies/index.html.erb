@@ -4,12 +4,14 @@
   <%= link_to "Thêm", new_movie_path %>
 </nav>
 
-<div style="display:grid; grid-template-columns: repeat(3, auto); grid-column-gap: 20px;">
+<div class="py-8 px-6 grid grid-cols-4 gap-x-12">
   <% @movies.each do |movie| %>
       <article>
-        <header>
+        <a href="<%= movie_path(movie) %>">
           <%= poster_for(movie) %>
-          <h2>
+        </a>
+        <header class="my-2">          
+          <h2 class="font-bold text-lg">
             <%= link_to(movie.translated_title, movie_path(movie)) %>
             (<%= movie.year %>)
           </h2>

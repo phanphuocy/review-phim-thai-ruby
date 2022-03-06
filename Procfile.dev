@@ -1,0 +1,2 @@
+web: ~/.rbenv/versions/3.0.3/bin/rails server -p 3000
+css: ~/.rbenv/versions/3.0.3/bin/rails tailwindcss:watch

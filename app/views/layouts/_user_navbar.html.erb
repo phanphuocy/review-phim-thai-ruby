@@ -1,4 +1,4 @@
-<nav>
+<nav class="text-white">
   <% if user_signed_in? %>
     <%= link_to 'Sửa profile', edit_user_registration_path %>
     <%= link_to 'Đăng xuất', destroy_user_session_path, method: :delete %>

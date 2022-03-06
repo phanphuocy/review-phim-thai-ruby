@@ -1,34 +1,52 @@
-<nav>
-  <%= link_to "Tất cả các phim", movies_path %>
+<nav class="px-6 py-4 bg-gray-300">
+  <%= link_to "Danh sách phim", movies_path %>
 </nav>
 <br />
 
-<h1><%= @movie.translated_title %></h1>
-<%= poster_for(@movie) %>
-<p><%= @movie.description %></p>
-<table>
-  <tr>
-    <td>Chiếu từ:</td>
-    <td><%= format_date(@movie.aired_from) %></td>
-  </tr>
-  <tr>
-    <td>Chiếu đến:</td>
-    <td><%= format_date(@movie.aired_to) %></td>
-  </tr>
-</table>
-
-<h2>Casts and crew</h2>
-<ul>
-  <% @all_roles_in_movie.each do |role| %>
-    <li>
-      <%= role.of.first_name %>
-    </li>
-  <% end %>
-</ul>
-<%= link_to 'Xem thêm', movie_person_role_in_movies_path(@movie) %>
-
-<br />
-<nav>
-  <%= link_to 'Sửa', edit_movie_path(@movie) %>
-  <%= link_to "Xóa", movie_path(@movie), method: :delete,  data: { confirm: 'Thao tác này không thể hoàn tác, bạn có chắc muốn xóa phim này?'} %>
-</nav>
+<header class="py-4 px-6">
+  <h1 class="font-bold text-3xl"><%= @movie.translated_title %> <span class="text-base text-gray-500">(<%= @movie.year %>)</span></h1>
+</header>
+<div class="py-4 px-6 grid grid-cols-3 gap-x-8">
+  <div class="col-span-1">
+    <%= poster_for(@movie) %>
+  </div>
+  <div class="col-span-2">
+    <p class="my-4"><%= @movie.description %></p>
+    <section class="my-4 bg-gray-200">
+      
+      <div class="py-12 px-16 flex justify-center items-center">
+          <div><span class="text-3xl font-bold">80%</span></div>  
+          <div><span class="text-3xl font-bold">92%</span></div>
+        </div>
+      
+    </section>
+    <table>
+      <tr>
+        <td>Chiếu từ:</td>
+        <td><%= format_date(@movie.aired_from) %></td>
+      </tr>
+      <tr>
+        <td>Chiếu đến:</td>
+        <td><%= format_date(@movie.aired_to) %></td>
+      </tr>
+    </table>
+    <section class="my-4"> 
+    <header class="my-2">
+    <h2 class="font-bold text-2xl">Casts and crew</h2>
+    </header>
+    <ul>
+      <% @all_roles_in_movie.each do |role| %>
+        <li>
+          <%= role.of.first_name %>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to 'Xem thêm', movie_person_role_in_movies_path(@movie) %>
+    </section>
+    <br />
+    <nav>
+      <%= link_to 'Sửa', edit_movie_path(@movie) %>
+      <%= link_to "Xóa", movie_path(@movie), method: :delete,  data: { confirm: 'Thao tác này không thể hoàn tác, bạn có chắc muốn xóa phim này?'} %>
+    </nav>
+  </div>
+</div>
