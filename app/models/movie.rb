@@ -1,5 +1,6 @@
 class Movie < ApplicationRecord
   has_many :person_role_in_movies, class_name: "PersonRoleInMovie", foreign_key: "in_movie_id", dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   validates :translated_title, :year, presence: true
   validates :description, length: { minimum: 25 }

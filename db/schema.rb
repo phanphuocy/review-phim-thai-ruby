@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_13_025514) do
+ActiveRecord::Schema.define(version: 2022_03_13_132604) do
 
   create_table "movies", force: :cascade do |t|
     t.string "translated_title"
@@ -54,6 +54,23 @@ ActiveRecord::Schema.define(version: 2022_03_13_025514) do
     t.index ["of_id"], name: "index_person_role_in_movies_on_of_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "movie_id", null: false
+    t.boolean "contains_spoilers"
+    t.string "headline"
+    t.text "content"
+    t.integer "story_rating"
+    t.integer "acting_rating"
+    t.integer "music_rating"
+    t.integer "rewatch_value_rating"
+    t.float "overall_rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_reviews_on_movie_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -66,4 +83,6 @@ ActiveRecord::Schema.define(version: 2022_03_13_025514) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reviews", "movies"
+  add_foreign_key "reviews", "users"
 end

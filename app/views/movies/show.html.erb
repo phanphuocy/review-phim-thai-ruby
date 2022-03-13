@@ -63,8 +63,16 @@
     <br />
     <section class="my-4">
       <header class="my-2">
-        <h2 class="font-bold text-2xl">Reviews</h2>        
+        <h2 class="font-bold text-2xl">Reviews</h2>    
+        <p class="text-gray-600 text-sm">Có <%= @reviews.count %> review cho bộ phim này</p>
       </header>
+      <div class="flex flex-col gap-y-6 p-4">
+        <% @reviews.each do |review| %>
+          <article class="">          
+            <%= simple_format  truncate(review.content, :length=>300) %>
+          </article>
+        <% end %>
+      </div>
     </section>
     <nav>
       <%= link_to 'Sửa', edit_movie_path(@movie) %>

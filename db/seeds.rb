@@ -229,3 +229,61 @@ PersonRoleInMovie.create!([
 ])
 
 puts "Associated #{PersonRoleInMovie.count} roles of people to movies"
+
+User.destroy_all
+
+bot_Ichiha_Kaneki = User.create!({
+    email: 'ichika.kaneki@gmail.com',
+    password: '12345678'
+})
+
+bot_Eebaboya = User.create!({
+    email: 'eebaboya@gmail.com',
+    password: '12345678'
+})
+
+bot_Jjes = User.create!({
+    email: 'jjes@gmail.com',
+    password: '12345678'
+})
+
+puts "Created #{User.count} users"
+
+Review.destroy_all
+
+Review.create!([
+    {
+        user: bot_Ichiha_Kaneki,
+        movie: m_Yeu_Chang_Cap_Cuu,
+        contains_spoilers: true,
+        content: 
+            "People who are saying, she\'s following her magic not her own feelings, i think your concept is a bit wrong,\n\neven though its shown in a practical form, but the magic is supposed to be her metaphor. she takes time to accept what she really wants,and her magic reflects her desires. she did love chalarn and her love for peng was slowly fading away.\nits not her magic\'s wish. it is indeed her wish. her magic is acting on her desires before her.\n\nWILD EXPLANATION BELOW :\n\n\" i bore what i could, i accepted what i can, that\'s why we lasted 15 years\" tantawan said to chalarn about peng\n\nGirl, a clap doesn\'t make sound well with just one hand\'s force. that one hand will eventually get tired.\nActually even though i kinda shipped pengXtantawan more than tantawanXchalarn at the beginning, im glad she ended up with chalarn.\n\nBUT from episode 9 i was all tantawanXchalarn.\n\nyes i read the comments in mydramalist, a lot of ppl were saying that the ending is unclear. the ending looked pretty fucking clear to me.\n\nYes tantawan loves peng more than chalarn, even during the ending of the last episode, but her love for peng is slowly fading away as well. i mentioned above that her magic is her metaphor portraying her desires before herself.\n\nwhen she closed her eyes beside her brother at the starry sky, she of course thought of peng and it was peng who indeed came.\n\nmost ppl thought that to be the important moment. but the most important moment was after that, when they were sweet conversing in the bed.\n\nwhen she asked peng for the next night to hang out with her or dine , his reply was \" i have shifts\".\n\nAnd her expression said the very thing,\" ah shit here we go again\"\nshe was sick of this,\n\n\" love and compatibility are not the same thing,\"\n\neven though very supernatural based, if the super power is considered her metaphor, the ending was very realistic.\n\nshe clearly loved chalarn,. and peng too. peng more.\n\nbut with peng she was suffocating slowly. and chalarn? he was everything tantawan wanted peng to be. no one knows if chalarn isn\'t gonna turn out just as peng later on, but for now, we live this very minute, and in this very minute, she felt extremely happy with chalarn\n\neven though they say opposite attracts, complete opposites dont attract each other. complementary opposites attract .\nnorth pole is opposite to south pole, but together they make a magnet. chalarn and tanta are different or opposites but they are complementary.\nbut even though peng and tanta were opposites, they were not complementary.",
+        story_rating: 7,
+        acting_rating: 9,
+        music_rating: 5,
+        rewatch_value_rating: 6            
+    },
+    {
+        user: bot_Eebaboya,
+        movie: m_Yeu_Chang_Cap_Cuu,
+        contains_spoilers: true,
+        content: 
+            "I can\'t believe this drama only has 1 review. I have been a big fan of thai dramas and when i found out that Sunny, Davikah, Sky and Thanaerng were in it, i just had to watch it! I did enjoy the drama and binge-watched it all in 2 days. It made me laugh and cry along with the characters. The OST was on point and I do like the core of the plot, which is even with magic, a relationship requires both parties to work hard on it in order to keep it going.\n\n**Spoilers ahead**\n\nCast - The cast was visually pleasing and I was in constant awe of Davikah\'s beauty. As for acting, Sunny and Davikah were on point. The scene where Peng had a complete meltdown in the ambulance, begging for his power to return just so he can save Thantawan. My gosh, that really broke me. Bank was an interesting choice for a villain. I\'ll admit I could not get over his baby face but he did do a fantastic job. Sky on the other hand, though I loved him in Hormones, he needed to brush up with his acting skills. I know he is stiff and it kind of worked for Chalan, but at times when he really needed to deliver, he just fell flat.\n\nCharacters - I loved that all the characters had their share of flaws. It made them more relatable. Peng was always putting work first and came across as cold to the person he loves, Chalan being very naive but also very positive about things, and Bamee being very fiesty and hot tempered but extremely straightforward. I do however wish Tantawan had more of a personal growth. Her life , for me, was kind of sad, as it was always centred around the person she loves.\n\nOST - Pretty good tbh. Found myself feeling most of the songs, especially \"you are my everything\".\n\nEnding - I\'m teamPENG so the ending was a disappointment. I do get why she picked Chalan though. He was attentive towards her and she could truly be herself around him. She could cry and share her emotions with him. Peng on the other hand, was cold towards her and kept taking her for granted. Despite her voicing her unhappiness, he often brushed it aside. Come on, the things that he said to her whenever she cried was just downright hurtful. It was only when he found out her feelings were starting to fade, that was when he started working on it. By then, it was too late. All it took was a small interaction between Chalan and Tantawan to change everything.\n\nI do like how Tantawan recapped her feeling for Peng at the end. I know some found it confusing and that they did not like it. But i do get it. Tantawan will always love Peng . But she knew that with him, 1 of them had to morph into someone else for the other to be happy. She didn\'t want to do that to him as she knew first-hand what it was like when she had to do so in their 15 year relationship. To compromise is one thing, to completely change oneself is another. With Peng, their connection will always be there regardless, hence he will always be \"her ambulance\".\n\nOverall, i am very very happy with this drama and will gladly rewatch it again.",
+        story_rating: 8,
+        acting_rating: 9,
+        music_rating: 9,
+        rewatch_value_rating: 9
+    },
+    {
+        user: bot_Jjes,
+        movie: m_Yeu_Chang_Cap_Cuu,
+        contains_spoilers: true,
+        content: "My Ambulance widens your perspective towards love. To be completely honest, I wasn’t really expectant when I started watching the show, but surprisingly, after going through the first episode, I found this drama quite interesting.\n\nWhy? First, the show is a vision. Each scene was shot in alluring visuals. Also, it pops each important element needed to emphasize in each frame, which was pure genius.\n\nUndeniably, the lead cast were amazing, but clearly, what made the whole show impeccable was the ensemble performance as a whole. The emotions they were showing relays so much towards their audience.\n\nAlso, another important element to point out is musical scoring. The songs they used on the show were a tremendous fit. Just as how a single song had different arrangements tailor-made for different scenes were to die for.\n\nOn that note, I saw this series a show to definitely watch. I know a lot of people didn’t like or favor how the show ended because the plot ending was quite unexpected in a romantic show, but in my opinion, it is important to give plot lines like this a chance. Also, not liking the show\'s ending doesn’t clearly mean it’s not a good show at all.",
+        story_rating: 9,
+        acting_rating: 10,
+        music_rating: 10,
+        rewatch_value_rating: 9
+    }
+])
+
+puts "Created #{Review.count} reviews"

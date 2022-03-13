@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reviews
   resources :movies do
     resources :person_role_in_movies
   end
