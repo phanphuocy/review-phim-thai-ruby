@@ -1,4 +1,4 @@
-<nav class="px-6 py-4 bg-gray-300">
+<nav class="px-6 py-4 bg-gray-800">
   <%= link_to "Danh sách phim", movies_path %>
 </nav>
 <br />
@@ -9,16 +9,25 @@
 <div class="py-4 px-6 grid grid-cols-3 gap-x-8">
   <div class="col-span-1">
     <%= poster_for(@movie) %>
+    <div class="py-2">
+      <button class="block py-2 px-4 bg-pink-600 text-orange-100 rounded w-full font-bold">Xem trailer</button>
+    </div>
   </div>
   <div class="col-span-2">
     <p class="my-4"><%= @movie.description %></p>
-    <section class="my-4 bg-gray-200">
-      
-      <div class="py-12 px-16 flex justify-center items-center">
-          <div><span class="text-3xl font-bold">80%</span></div>  
-          <div><span class="text-3xl font-bold">92%</span></div>
-        </div>
-      
+    <section class="my-4 bg-gray-900">
+      <div class="py-8 px-8 flex justify-center items-center gap-x-4">
+          <div class="flex flex-col items-end">
+            <div class="text-3xl font-bold">80%</div>
+            <div>TOMATOETER</div>
+            <p>7 reviews</p>
+          </div>  
+            <div class="flex flex-col items-end">
+            <div class="text-3xl font-bold">92%</div>
+            <div>TOMATOETER</div>
+            <p>7 reviews</p>
+          </div> 
+      </div>
     </section>
     <table>
       <tr>
@@ -31,19 +40,32 @@
       </tr>
     </table>
     <section class="my-4"> 
-    <header class="my-2">
-    <h2 class="font-bold text-2xl">Casts and crew</h2>
-    </header>
-    <ul>
-      <% @all_roles_in_movie.each do |role| %>
-        <li>
-          <%= role.of.first_name %>
-        </li>
-      <% end %>
-    </ul>
-    <%= link_to 'Xem thêm', movie_person_role_in_movies_path(@movie) %>
+      <header class="my-2">
+        <h2 class="font-bold text-2xl">Casts and crew</h2>
+      </header>
+      <ul class="py-2 grid grid-cols-3 gap-x-6 gap-y-6">
+        <% @all_roles_in_movie.each do |role| %>
+          <li class="grid grid-cols-3 gap-x-3">
+            <div>
+              <%= image_tag role.of.portrait_file_name %>
+            </div>
+            <div class="col-span-2">
+            <a class="text-pink-300 font-semibold" href="<%= person_path(role.of) %>">
+              <%= role.of.display_name %>
+            </a>
+            <p><%= role.character_name %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to 'Xem thêm', movie_person_role_in_movies_path(@movie) %>
     </section>
     <br />
+    <section class="my-4">
+      <header class="my-2">
+        <h2 class="font-bold text-2xl">Reviews</h2>        
+      </header>
+    </section>
     <nav>
       <%= link_to 'Sửa', edit_movie_path(@movie) %>
       <%= link_to "Xóa", movie_path(@movie), method: :delete,  data: { confirm: 'Thao tác này không thể hoàn tác, bạn có chắc muốn xóa phim này?'} %>

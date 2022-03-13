@@ -1,0 +1,23 @@
+<header class="bg-pink-600 px-6 py-2 flex justify-between items-center">
+    <h1 class="text-white font-bold uppercase">Person (<%= @all_people.size %>)</h1>
+    <nav>
+        <%= link_to "Thêm", new_person_path, class: "inline-block p-3 rounded bg-green-600 font-bold text-white" %>
+    </nav>
+</header>
+
+
+<div class="py-8 px-6 grid grid-cols-6 gap-x-4 gap-y-3">
+  <% @all_people.each do |person| %>
+      <article>
+            <header>
+            <div class="aspect-square">
+                <%= image_tag person.portrait_file_name %>
+            </div>
+            <a href="<%= person_path(person)%>">
+                <h2 class="text-md font-bold"><%= person.first_name + " " + person.family_name %>
+                </h2>
+                </a>
+            </header>
+        </article>
+  <% end %>
+</div>

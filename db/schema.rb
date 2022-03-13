@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_06_023304) do
+ActiveRecord::Schema.define(version: 2022_03_13_025514) do
 
   create_table "movies", force: :cascade do |t|
     t.string "translated_title"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2022_03_06_023304) do
     t.text "short_bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "portrait_file_name"
+    t.string "display_name"
   end
 
   create_table "person_role_in_movies", force: :cascade do |t|
@@ -47,6 +49,7 @@ ActiveRecord::Schema.define(version: 2022_03_06_023304) do
     t.string "role_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "character_name"
     t.index ["in_movie_id"], name: "index_person_role_in_movies_on_in_movie_id"
     t.index ["of_id"], name: "index_person_role_in_movies_on_of_id"
   end
