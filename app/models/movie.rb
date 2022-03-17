@@ -10,6 +10,14 @@ class Movie < ApplicationRecord
       message: "Poster phải ở định dạng file ảnh"
   }
 
+  before_validation do
+    if self.aired_from
+      self.year = self.aired_from.year.to_s
+    else
+      self.year = 'Không rõ'
+    end
+  end
+
   def airing?
     if aired_from && aired_to
       now = DateTime.now
